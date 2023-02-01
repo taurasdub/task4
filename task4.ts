@@ -3,8 +3,14 @@
 // A returns only initial and inWork
 // Need to replace FIXME with the correct type computed based on Order
 
-// type FIXME = Order | null;
-type FIXME = { state: string; sum: number; workerId?: number } | null;
+// type FIXME =
+//   | (Partial<Order> & { state: "initial" | "inWork"; sum: number })
+//   | null;
+type FIXME = {
+  state: "initial" | "inWork";
+  sum: number;
+  workerId?: number;
+} | null;
 
 type Order =
   | {

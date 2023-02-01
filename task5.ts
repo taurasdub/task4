@@ -1,4 +1,4 @@
-type FIXME = string[];
+type FIXME = Exclude<OrderState, "buyingSupplies" | "producing">;
 
 type OrderState =
   | "initial"
@@ -8,8 +8,8 @@ type OrderState =
   | "fullfilled";
 
 // Hint: with type guards return type can be removed
-export const getUserOrderStates = (orderStates: OrderState[]): FIXME => {
+export const getUserOrderStates = (orderStates: OrderState[]): FIXME[] => {
   return orderStates.filter(
     (state) => state !== "buyingSupplies" && state !== "producing"
-  );
+  ) as FIXME[];
 };

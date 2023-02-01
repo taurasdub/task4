@@ -3,7 +3,6 @@
 
 // NOTE: in this task you able to modify code in place where you assign FIXME type
 
-// NO IDEA!!!!!!!!!!!
 type FIXME<T, K extends keyof T> = Omit<T, K>;
 
 export const omit = <T extends Record<any, any>, K extends keyof T>(
